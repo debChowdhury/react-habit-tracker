@@ -7,7 +7,7 @@ import ErrorPage from './error-page';
 import Details from './details';
 import './index.css';
 import {
-  createBrowserRouter,
+  createHashRouter,
   RouterProvider,
   Route,
 } from "react-router-dom";
@@ -17,7 +17,7 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 // creating browser router from react-router-dom
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,

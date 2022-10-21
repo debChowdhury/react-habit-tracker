@@ -74,17 +74,17 @@ export function HabitsList() {
               {habitListTable}
             </tbody>
           </Table>
-          {/* Form to add habit */}
+          {/* Form to add */}
           <Form id='habit-add-form' onSubmit={handleSubmit}>
             <FloatingLabel
               controlId="floatingInput"
-              label="Enter todo title"
+              label="Enter habit title"
               className="mb-3">
-              {/* add todo title */}
+              {/* add habit title */}
               <Form.Control
                 value={habitTitleToAdd} 
                 onChange={handleChange}
-                placeholder="Enter todo title"
+                placeholder="Enter habit title"
               />
             </FloatingLabel>
             <Form.Group className="mb-3">
