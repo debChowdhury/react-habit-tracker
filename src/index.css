@@ -1,13 +1,42 @@
+/* body design */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Cormorant Garamond', serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* the root div design */
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* react router dom link design */
+.link{
+  text-decoration: none;
+  color: white;
+}
+
+/* table design */
+Table{
+  text-align: center;
+}
+
+/* Habit add form design */
+#habit-add-form{
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* prev next btns container div design */
+.prev-next-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* prev next btns design */
+.prev-next-div Button{
+  color: white;
 }

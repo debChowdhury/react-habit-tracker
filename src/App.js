@@ -1,55 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { HabitsList } from './features/habits_list/HabitsList';
+
+// constants for habit status
+export const DONE = 0;
+export const NOT_DONE = 1;
+export const NONE = 2;
+
+// function to get today's date
+export function getTodayDate(){
+  let today = new Date();
+  let dd = String(today.getDate()).padStart(2, '0');
+  let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  let yyyy = today.getFullYear();
+
+  today = dd + '/' + mm + '/' + yyyy;
+  return today;
+}
+
+// function to get 7 dates according to prev and next multiple value. default is 7 dates prior and including the current date
+export function getDates(multiple) {
+  var aryDates = [];
+
+  for (var i = ((7*multiple)+6); i >= (7*multiple); i--) {
+      var currentDate = new Date();
+      currentDate.setDate(currentDate.getDate() - i);
+      aryDates.push(String(currentDate.getDate()).padStart(2, '0') + "/" + String((currentDate.getMonth()+1)).padStart(2, '0') + "/" + currentDate.getFullYear());
+  }
+
+  return aryDates;
+}
 
 function App() {
   return (
+    // the app component
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
+        <HabitsList />
       </header>
     </div>
   );
